@@ -1,22 +1,24 @@
+Using System;
+
 namespace Library.Tests;
 
 [TestFixture]
 public class DateFormatterTests
 {
-    [Test]
+       [Test]
     public void Test1()
     {
-        string date = "35/15/1900";
-        date.Substring(0, 2)>31;
-        Assert.IsFalse(fecha);
+        expected.date = null;
+        result = DateFormatter.ChangeFormat ("");
+        Assert.AreEqual(expected,result);
     }
-
+ 
     [Test]
     public void Test2()
     {
         string date = "05/16/1900";
         date.Substring(3, 2)>12;
-        Assert.IsFalse(fecha);
+        Assert.IsFalse(expected,1900-16-05);
     }
 
     [Test]
@@ -24,7 +26,7 @@ public class DateFormatterTests
     {
         string date = "05/10/1900";
         string fecha = DateFormatter.ChangeFormat(fecha);
-        Assert.IsTrue(fecha);
+        Assert.AreEqual(expected,1900-10-05);;
     }
 
 }
